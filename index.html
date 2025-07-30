@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaya Sushi & Wok - Autentisk japansk cuisine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .logo {
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .logo .japanese-text {
+            font-size: 1.2rem;
+            color: #ff4444;
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .restaurant-selector {
+            background: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2d2d2d;
+            font-weight: 300;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        .restaurants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .restaurant-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .restaurant-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            border-color: #ff4444;
+        }
+
+        .restaurant-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2d2d2d;
+            margin-bottom: 1rem;
+        }
+
+        .restaurant-address {
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .restaurant-phone {
+            color: #ff4444;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .restaurant-hours {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .hours-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #2d2d2d;
+        }
+
+        .enter-btn {
+            background: linear-gradient(135deg, #ff4444 0%, #cc3333 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .enter-btn:hover {
+            background: linear-gradient(135deg, #cc3333 0%, #aa2222 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,68,68,0.3);
+        }
+
+        .about-section {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .features {
+            background: white;
+            padding: 4rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #2d2d2d;
+        }
+
+        .feature-text {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #ff4444;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: #ff4444;
+        }
+
+        .copyright {
+            border-top: 1px solid #333;
+            padding-top: 1rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .restaurants-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>KAYA</h1>
+                <div class="japanese-text">カヤ SUSHI & WOK</div>
+                <p class="tagline">Autentisk japansk cuisine i hjertet af Danmark</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="restaurant-selector">
+        <div class="container">
+            <h2 class="section-title">Vælg din restaurant</h2>
+            <p class="section-subtitle">Besøg en af vores lokationer for den bedste sushi oplevelse</p>
+            
+            <div class="restaurants-grid">
+                <div class="restaurant-card" onclick="window.location.href='frederiksberg.html'">
+                    <h3 class="restaurant-name">Kaya Sushi Frederiksberg</h3>
+                    <p class="restaurant-address">Nordre Fasanvej 158 st.tv<br>2000 Frederiksberg</p>
+                    <p class="restaurant-phone">TLF: 9199 8883</p>
+                    <div class="restaurant-hours">
+                        <div class="hours-title">ÅBNINGSTIDER</div>
+                        <div>Mandag-Fredag: 14:00-24:00</div>
+                        <div>Lørdag-Søndag: 13:00-24:00</div>
+                    </div>
+                    <button class="enter-btn">Besøg restaurant</button>
+                </div>
+
+                <div class="restaurant-card" onclick="window.location.href='soborg.html'">
+                    <h3 class="restaurant-name">Kaya Sushi Søborg</h3>
+                    <p class="restaurant-address">Søborg Hovedgade 124A<br>2860 Søborg</p>
+                    <p class="restaurant-phone">TLF: 5123 1188</p>
+                    <div class="restaurant-hours">
+                        <div class="hours-title">ÅBNINGSTIDER</div>
+                        <div>Mandag-Søndag: 12:00-22:00</div>
+                    </div>
+                    <button class="enter-btn">Besøg restaurant</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">Om Kaya Sushi</h2>
+                <p class="about-text">
+                    Hos Kaya Sushi & Wok kombinerer vi traditionelle japanske kogeteknikker med friske, nordiske ingredienser. 
+                    Vores passion for kvalitet og autenticitet skinner igennem i hver enkelt ret vi serverer. 
+                    Fra håndlavede sushi ruller til vores specielle wok retter - vi skaber en smagsoplevelse, 
+                    der bringer det bedste fra det japanske køkken til Danmark.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Hvad gør os særlige</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🍣</div>
+                    <h3 class="feature-title">Friske Ingredienser</h3>
+                    <p class="feature-text">Vi bruger kun de friskeste råvarer og importerer specialiteter direkte fra Japan</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">👨‍🍳</div>
+                    <h3 class="feature-title">Erfarne Kokke</h3>
+                    <p class="feature-text">Vores kokke har mange års erfaring med traditionelle japanske kogeteknikker</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🥢</div>
+                    <h3 class="feature-title">Autentisk Oplevelse</h3>
+                    <p class="feature-text">Fra atmosfæren til smagene - vi bringer det ægte Japan til Danmark</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🚚</div>
+                    <h3 class="feature-title">Take Away</h3>
+                    <p class="feature-text">Nyd vores sushi hjemme med vores hurtige og pålidelige take away service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Kaya Sushi Frederiksberg</h3>
+                    <p>Nordre Fasanvej 158 st.tv</p>
+                    <p>2000 Frederiksberg</p>
+                    <p>TLF: 9199 8883</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Kaya Sushi Søborg</h3>
+                    <p>Søborg Hovedgade 124A</p>
+                    <p>2860 Søborg</p>
+                    <p>TLF: 5123 1188</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Følg os</h3>
+                    <a href="#">Facebook</a><br>
+                    <a href="#">Instagram</a><br>
+                    <a href="mailto:info@kayasushi.dk">info@kayasushi.dk</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Kaya Sushi & Wok. Alle rettigheder forbeholdes.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

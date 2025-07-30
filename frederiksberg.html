@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaya Sushi Frederiksberg - Autentisk japansk cuisine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ff4444;
+        }
+
+        .location-info {
+            font-size: 0.9rem;
+            text-align: right;
+        }
+
+        .nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: #ff4444;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 68, 68, 0.3);
+        }
+
+        .content {
+            padding: 3rem 0;
+            min-height: 70vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, rgba(255,68,68,0.1) 0%, rgba(45,45,45,0.1) 100%);
+            border-radius: 20px;
+            margin-bottom: 3rem;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #2d2d2d;
+            font-weight: 300;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .hero-address {
+            font-size: 1.1rem;
+            color: #ff4444;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .hero-phone {
+            font-size: 1.3rem;
+            color: #2d2d2d;
+            font-weight: bold;
+        }
+
+        .page-content {
+            display: none;
+        }
+
+        .page-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #2d2d2d;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            color: #ff4444;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2d2d2d;
+            margin: 1rem 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff4444;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #ff4444 0%, #cc3333 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #cc3333 0%, #aa2222 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,68,68,0.3);
+        }
+
+        .contact-info {
+            background: #2d2d2d;
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info h3 {
+            color: #ff4444;
+            margin-bottom: 1rem;
+        }
+
+        .map-container {
+            height: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .back-to-main {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .back-to-main a {
+            color: #ff4444;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-to-main a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">KAYA SUSHI FREDERIKSBERG</div>
+            <div class="location-info">
+                <div>Nordre Fasanvej 158 st.tv, 2000 Frederiksberg</div>
+                <div>TLF: 9199 8883</div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="nav-content">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link active" onclick="showPage('forside')">Forside</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('takeaway')">Take Away</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('allyoucaneat')">All You Can Eat</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('bookbord')">Book Bord</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('kontakt')">Kontakt Os</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="container">
+            <div class="back-to-main">
+                <a href="index.html">← Tilbage til hovedside</a>
+            </div>
+
+            <!-- Forside -->
+            <div id="forside" class="page-content active">
+                <div class="hero-section">
+                    <h1 class="hero-title">Velkommen til Kaya Sushi Frederiksberg</h1>
+                    <p class="hero-subtitle">Oplev autentisk japansk cuisine i Frederiksberg</p>
+                    <div class="hero-address">Nordre Fasanvej 158 st.tv, 2000 Frederiksberg</div>
+                    <div class="hero-phone">TLF: 9199 8883</div>
+                </div>
+
+                <div class="grid">
+                    <div class="card">
+                        <h3>🍣 Frisk Sushi</h3>
+                        <p>Håndlavet sushi tilberedt med de friskeste ingredienser. Fra klassiske nigiri til kreative specialty rolls.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🥢 Wok Retter</h3>
+                        <p>Autentiske wok retter inspireret af det traditionelle asiatiske køkken med moderne twist.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🚚 Take Away</h3>
+                        <p>Bestil online og hent din mad - eller få den leveret direkte til døren.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🍽️ All You Can Eat</h3>
+                        <p>Nyd så meget sushi du kan spise til en fast pris. Perfekt til store eller små selskaber.</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <h2 class="section-title">Åbningstider</h2>
+                    <div class="card" style="max-width: 400px; margin: 0 auto;">
+                        <h3>Mandag - Fredag</h3>
+                        <p style="font-size: 1.2rem; font-weight: bold; color: #ff4444;">14:00 - 24:00</p>
+                        <h3 style="margin-top: 1rem;">Lørdag - Søndag</h3>
+                        <p style="font-size: 1.2rem; font-weight: bold; color: #ff4444;">13:00 - 24:00</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Take Away -->
+            <div id="takeaway" class="page-content">
+                <h2 class="section-title">Take Away</h2>
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <p style="font-size: 1.2rem; color: #666; margin-bottom: 2rem;">
+                        Bestil din favorit sushi online og få den leveret eller hent selv i restauranten.
+                    </p>
+                    <a href="https://www.just-eat.dk" target="_blank" class="btn" style="display: inline-block; text-decoration: none; margin-right: 1rem;">
+                        Bestil på Just Eat
+                    </a>
+                    <a href="https://www.foodora.dk" target="_blank" class="btn" style="display: inline-block; text-decoration: none;">
+                        Bestil på Foodora
+                    </a>
+                </div>
+                
+                <div class="grid">
+                    <div class="card">
+                        <h3>Populære Sushi Menuer</h3>
+                        <p><strong>Kaya Special Menu</strong></p>
+                        <div class="price">DKK 189,-</div>
+                        <p>12 stk. maki + 6 stk. nigiri + 2 stk. inside-out</p>
+                    </div>
+                    <div class="card">
+                        <h3>Familie Menu</h3>
+                        <p><strong>Perfect til deling</strong></p>
+                        <div class="price">DKK 349,-</div>
+                        <p>24 stk. maki + 12 stk. nigiri + 4 stk. inside-out + edamame</p>
+                    </div>
+                    <div class="card">
+                        <h3>Vegetar Menu</h3>
+                        <p><strong>Helt uden kød og fisk</strong></p>
+                        <div class="price">DKK 159,-</div>
+                        <p>Avocado maki, agurk maki, vegetar inside-out + grøntsags tempura</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All You Can Eat -->
+            <div id="allyoucaneat" class="page-content">
+                <h2 class="section-title">All You Can Eat</h2>
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <p style="font-size: 1.2rem; color: #666;">
+                        Spis så meget sushi du kan til en fast pris. Minimum 2 timer spisetid.
+                    </p>
+                </div>
+                
+                <div class="grid">
+                    <div class="card">
+                        <h3>Voksne (12+ år)</h3>
+                        <div class="price">
+                            <div>Mandag-Torsdag: DKK 228,-</div>
+                            <div>Fredag-Søndag: DKK 248,-</div>
+                        </div>
+                        <p>Adgang til hele vores sushi buffet med over 40 forskellige variationer</p>
+                    </div>
+                    <div class="card">
+                        <h3>Børn (2-11 år)</h3>
+                        <div class="price">
+                            <div>Mandag-Torsdag: DKK 114,-</div>
+                            <div>Fredag-Søndag: DKK 124,-</div>
+                        </div>
+                        <p>Halv pris for børn mellem 2-11 år</p>
+                    </div>
+                    <div class="card">
+                        <h3>Småbørn (0-2 år)</h3>
+                        <div class="price">Gratis</div>
+                        <p>Børn under 2 år spiser gratis</p>
+                    </div>
+                </div>
+
+                <div style="background: #f8f9fa; padding: 2rem; border-radius: 12px; margin-top: 2rem;">
+                    <h3 style="text-align: center; margin-bottom: 1rem;">Buffet Indeholder</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <div>• Alle klassiske maki</div>
+                        <div>• Nigiri sushi</div>
+                        <div>• Inside-out rolls</div>
+                        <div>• Sashimi</div>
+                        <div>• Tempura</div>
+                        <div>• Salater</div>
+                        <div>• Diverse forretter</div>
+                        <div>• Frugt og dessert</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Book Bord -->
+            <div id="bookbord" class="page-content">
+                <h2 class="section-title">Book Bord</h2>
+                <div style="max-width: 600px; margin: 0 auto;">
+                    <div class="card">
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Navn *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Telefon *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email">
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <label for="date">Dato *</label>
+                                    <input type="date" id="date" name="date" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="time">Tidspunkt *</label>
+                                    <select id="time" name="time" required>
+                                        <option value="">Vælg tidspunkt</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="14:30">14:30</option>
+                                        <option value="15:00">15:00</option>
+                                        <option value="15:30">15:30</option>
+                                        <option value="16:00">16:00</option>
+                                        <option value="16:30">16:30</option>
+                                        <option value="17:00">17:00</option>
+                                        <option value="17:30">17:30</option>
+                                        <option value="18:00">18:00</option>
+                                        <option value="18:30">18:30</option>
+                                        <option value="19:00">19:00</option>
+                                        <option value="19:30">19:30</option>
+                                        <option value="20:00">20:00</option>
+                                        <option value="20:30">20:30</option>
+                                        <option value="21:00">21:00</option>
+                                        <option value="21:30">21:30</option>
+                                        <option value="22:00">22:00</option>
+                                        <option value="22:30">22:30</option>
+                                        <option value="23:00">23:00</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="guests">Antal personer *</label>
+                                <select id="guests" name="guests" required>
+                                    <option value="">Vælg antal</option>
+                                    <option value="1">1 person</option>
+                                    <option value="2">2 personer</option>
+                                    <option value="3">3 personer</option>
+                                    <option value="4">4 personer</option>
+                                    <option value="5">5 personer</option>
+                                    <option value="6">6 personer</option>
+                                    <option value="7">7 personer</option>
+                                    <option value="8">8 personer</option>
+                                    <option value="9+">9+ personer</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Besked</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Specielle ønsker, allergier, etc."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn" style="width: 100%;">Send Reservation</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kontakt Os -->
+            <div id="kontakt" class="page-content">
+                <h2 class="section-title">Kontakt Os</h2>
+                
+                <div class="contact-info">
+                    <h3>🏠 Kaya Sushi Frederiksberg</h3>
+                    <p><strong>Adresse:</strong> Nordre Fasanvej 158 st.tv, 2000 Frederiksberg</p>
+                    <p><strong>Telefon:</strong> 9199 8883</p>
+                    <p><strong>Email:</strong> frederiksberg@kayasushi.dk</p>
+                    <br>
+                    <h4>Åbningstider:</h4>
+                    <p>Mandag-Fredag: 14:00 - 24:00</p>
+                    <p>Lørdag-Søndag: 13:00 - 24:00</p>
+                </div>
+
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2237.8!2d12.5!3d55.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sNordre%20Fasanvej%20158%2C%202000%20Frederiksberg!5e0!3m2!1sda!2sdk!4v1234567890"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <h3 style="text-align: center; margin-bottom: 2rem;">Send os en besked</h3>
+                    <div style="max-width: 600px; margin: 0 auto;">
+                        <div class="card">
+                            <form>
+                                <div class="form-group">
+                                    <label for="contact-name">Navn *</label>
+                                    <input type="text" id="contact-name" name="name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-email">Email *</label>
+                                    <input type="email" id="contact-email" name="email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-phone">Telefon</label>
+                                    <input type="tel" id="contact-phone" name="phone">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-subject">Emne</label>
+                                    <select id="contact-subject" name="subject">
+                                        <option value="general">Generel henvendelse</option>
+                                        <option value="reservation">Bordreservation</option>
+                                        <option value="takeaway">Take away</option>
+                                        <option value="catering">Catering</option>
+                                        <option value="complaint">Klage</option>
+                                        <option value="compliment">Ros</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-message">Besked *</label>
+                                    <textarea id="contact-message" name="message" rows="5" required></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn" style="width: 100%;">Send Besked</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Kaya Sushi Frederiksberg. Alle rettigheder forbeholdes.</p>
+            <p>Nordre Fasanvej 158 st.tv, 2000 Frederiksberg | TLF: 9199 8883</p>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Remove active class from all nav links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Add active class to clicked nav link
+            event.target.classList.add('active');
+        }
+
+        // Form submission handlers
+        document.addEventListener('DOMContentLoaded', function() {
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Tak for din henvendelse! Vi kontakter dig snarest muligt.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
