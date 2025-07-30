@@ -1,0 +1,433 @@
+/* 主页特定样式 */
+.hero-header {
+    background: linear-gradient(135deg, rgba(26,26,26,0.9) 0%, rgba(45,45,45,0.9) 100%),
+                url('../images/hero-bg.jpg') center/cover;
+    color: white;
+    padding: 6rem 0 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.main-logo {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    animation: fadeInUp 1s ease-out;
+}
+
+.japanese-text {
+    font-size: 1.2rem;
+    color: #ff4444;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.tagline {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: rgba(255,255,255,0.9);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+/* 餐厅选择区域 */
+.restaurant-selector {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.restaurant-selector::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        url('../images/sushi-pattern-1.jpg'),
+        url('../images/sushi-pattern-2.jpg'),
+        url('../images/sushi-pattern-3.jpg');
+    background-size: 200px 150px, 250px 180px, 220px 160px;
+    background-position: 10% 20%, 80% 70%, 50% 90%;
+    background-repeat: no-repeat;
+    opacity: 0.08;
+    z-index: 1;
+}
+
+.restaurant-selector > * {
+    position: relative;
+    z-index: 2;
+}
+
+.restaurants-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.restaurant-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    height: 400px;
+    border: 1px solid #f0f0f0;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+.restaurant-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(135deg, 
+        rgba(255, 68, 68, 0.15) 0%,
+        rgba(255, 68, 68, 0.05) 100%);
+    border-radius: 20px 20px 0 0;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+}
+
+.restaurant-card:nth-child(1)::before {
+    background-image: linear-gradient(135deg, 
+        rgba(255, 68, 68, 0.15) 0%,
+        rgba(255, 68, 68, 0.05) 100%), 
+        url('../images/frederiksberg-interior.jpg');
+}
+
+.restaurant-card:nth-child(2)::before {
+    background-image: linear-gradient(135deg, 
+        rgba(255, 68, 68, 0.15) 0%,
+        rgba(255, 68, 68, 0.05) 100%), 
+        url('../images/soborg-interior.jpg');
+}
+
+.restaurant-card::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    z-index: 3;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.restaurant-card:nth-child(1)::after {
+    content: '🍣';
+}
+
+.restaurant-card:nth-child(2)::after {
+    content: '🥢';
+}
+
+.restaurant-content {
+    padding: 2.5rem 2rem;
+    position: relative;
+    z-index: 2;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+.restaurant-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2d2d2d;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+}
+
+.restaurant-address {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.restaurant-specialties {
+    color: #ff4444;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* 关于我们部分 */
+.about-section {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        url('../images/traditional-sushi.jpg'),
+        url('../images/chef-preparing.jpg');
+    background-size: 200px 150px, 180px 120px;
+    background-position: 85% 15%, 15% 85%;
+    background-repeat: no-repeat;
+    opacity: 0.06;
+    z-index: 1;
+}
+
+.about-section > * {
+    position: relative;
+    z-index: 2;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: rgba(255,255,255,0.9);
+}
+
+/* 特色功能区域 */
+.features-section {
+    padding: 5rem 0;
+    background: white;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #ff4444 0%, #ff6666 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover .feature-icon {
+    transform: scale(1.1);
+}
+
+.feature-item h3 {
+    color: #2d2d2d;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.feature-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 页脚 */
+.footer {
+    background: #2d2d2d;
+    color: white;
+    padding: 3rem 0 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    color: #ff4444;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-section p,
+.footer-section a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    line-height: 1.6;
+}
+
+.footer-section a:hover {
+    color: #ff4444;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 2rem;
+    color: rgba(255,255,255,0.6);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .hero-header {
+        padding: 4rem 0 3rem;
+        min-height: 60vh;
+    }
+    
+    .main-logo {
+        font-size: 3rem;
+    }
+    
+    .tagline {
+        font-size: 1.1rem;
+    }
+    
+    .restaurant-selector {
+        padding: 3rem 0;
+    }
+    
+    .restaurants-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .restaurant-card {
+        height: 350px;
+    }
+    
+    .restaurant-content {
+        padding: 2rem 1.5rem;
+        height: 150px;
+        margin-top: 200px;
+    }
+    
+    .restaurant-name {
+        font-size: 1.5rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .about-section {
+        padding: 3rem 0;
+    }
+    
+    .about-content h2 {
+        font-size: 2rem;
+    }
+    
+    .about-content p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-header {
+        padding: 3rem 0 2rem;
+    }
+    
+    .main-logo {
+        font-size: 2.5rem;
+    }
+    
+    .restaurant-card {
+        height: 320px;
+    }
+    
+    .restaurant-content {
+        padding: 1.5rem 1rem;
+        height: 120px;
+        margin-top: 200px;
+    }
+    
+    .feature-item {
+        padding: 2rem 1rem;
+    }
+}
