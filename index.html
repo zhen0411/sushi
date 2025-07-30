@@ -19,12 +19,16 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            background: linear-gradient(135deg, rgba(26,26,26,0.9) 0%, rgba(45,45,45,0.9) 100%),
+                        url('https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?w=1920&h=1080&fit=crop&crop=center') center/cover;
             color: white;
-            padding: 2rem 0;
+            padding: 4rem 0;
             text-align: center;
             position: relative;
             overflow: hidden;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
         }
 
         .header::before {
@@ -34,33 +38,48 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
-            opacity: 0.3;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
         }
 
         .logo {
             position: relative;
             z-index: 2;
+            animation: fadeInUp 1s ease-out;
         }
 
         .logo h1 {
-            font-size: 3rem;
+            font-size: 4rem;
             font-weight: bold;
             margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
         }
 
         .logo .japanese-text {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             color: #ff4444;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .tagline {
-            font-size: 1.1rem;
-            opacity: 0.9;
+            font-size: 1.3rem;
+            opacity: 0.95;
             position: relative;
             z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .restaurant-selector {
@@ -103,11 +122,38 @@
             transition: all 0.3s ease;
             border: 2px solid transparent;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .restaurant-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(135deg, 
+                url('https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=400&h=150&fit=crop') center/cover,
+                rgba(255, 68, 68, 0.1));
+            opacity: 0.8;
+            z-index: 1;
+        }
+
+        .restaurant-card:nth-child(2)::before {
+            background: linear-gradient(135deg, 
+                url('https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=400&h=150&fit=crop') center/cover,
+                rgba(255, 68, 68, 0.1));
+        }
+
+        .restaurant-card > * {
+            position: relative;
+            z-index: 2;
         }
 
         .restaurant-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
             border-color: #ff4444;
         }
 
@@ -116,6 +162,7 @@
             font-weight: bold;
             color: #2d2d2d;
             margin-bottom: 1rem;
+            margin-top: 120px;
         }
 
         .restaurant-address {
@@ -196,11 +243,43 @@
         .feature-item {
             text-align: center;
             padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff4444, #cc3333);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
         .feature-icon {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover .feature-icon {
+            transform: scale(1.2) rotate(5deg);
         }
 
         .feature-title {

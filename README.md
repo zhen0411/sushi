@@ -39,6 +39,11 @@ Websitet er designet med inspiration fra danske mainstream sushi restauranter so
 - **Layout:** Responsivt grid-system
 - **Animationer:** Smooth hover-effekter og transitions
 - **Komponenter:** Cards, gradients, og moderne UI-elementer
+- **Baggrundsbilleder:** High-quality sushi og restaurant billeder fra Unsplash
+- **Video Integration:** YouTube videoer i velkomst-popups
+- **Floating Elements:** Animerede baggrundselementer (🍣🥢🍱🥟)
+- **Modal Popups:** Interaktive velkomstbeskeder med tilbud
+- **Hover Effects:** 3D transformationer og skyggeeffekter
 
 ## 📱 Funktioner
 
@@ -101,6 +106,12 @@ Hver restaurant side indeholder følgende sektioner:
 - Smooth page transitions
 - Form validation
 - Interactive navigation
+- Modal popup system med localStorage
+- Auto-playing video integration
+- Floating background animations
+- Enhanced form success messages
+- Keyboard shortcuts (ESC for at lukke modals)
+- Smooth scrolling navigation
 
 ### Responsive Design
 - **Desktop:** Fuld grid layout
@@ -111,9 +122,11 @@ Hver restaurant side indeholder følgende sektioner:
 
 1. **Åbn index.html** i en browser
 2. **Vælg restaurant** ved at klikke på et af kortene
-3. **Naviger** mellem sektioner ved hjælp af top-menu
-4. **Book bord** eller **bestil takeaway** via formularer
-5. **Kontakt** restauranten via kontakt sektionen
+3. **Oplev velkomst-popup** ved første besøg (inkl. intro video)
+4. **Naviger** mellem sektioner ved hjælp af top-menu
+5. **Book bord** eller **bestil takeaway** via formularer
+6. **Kontakt** restauranten via kontakt sektionen
+7. **Nyd de animerede elementer** og interaktive funktioner
 
 ## 📱 Browser Support
 
@@ -130,14 +143,37 @@ Hver restaurant side indeholder følgende sektioner:
 - Strukturerede data (lokale virksomheder)
 - Mobile-optimeret
 
+## ✨ Nye Funktioner
+
+### Visual Enhancements
+- **Hero baggrunde:** Smukke sushi og restaurant billeder
+- **Animerede kort:** 3D hover-effekter med gradients
+- **Floating elementer:** Subtile animerede ikoner i baggrunden
+- **Forbedrede skygger:** Moderne dybde og dimensioner
+
+### Interactive Features
+- **Velkomst-popups:** Automatiske modals ved første besøg
+- **Video integration:** YouTube sushi-videoer i popups
+- **Smart localStorage:** Husker brugerens tidligere besøg
+- **Enhanced forms:** Pænere success beskeder
+- **Keyboard navigation:** ESC for at lukke modals
+
+### User Experience
+- **Smooth animations:** Forbedrede transitions overalt
+- **Mobile-optimized:** Perfekt responsiv på alle enheder
+- **Loading states:** Bedre feedback til brugeren
+- **Visual hierarchy:** Tydeligere information arkitektur
+
 ## 🔧 Fremtidige Forbedringer
 
-- Online menu system
-- Real-time bordreservation
-- Betalingsintegration
-- Loyalitetsprogram
+- Online menu system med billeder
+- Real-time bordreservation integration
+- Betalingsintegration (Stripe/PayPal)
+- Loyalitetsprogram med point-system
 - Flere sprog (engelsk, tysk)
 - Progressive Web App (PWA) funktioner
+- Push notifications for tilbud
+- Social media integration
 
 ## 📞 Support
 

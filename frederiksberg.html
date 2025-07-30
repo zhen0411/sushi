@@ -19,13 +19,14 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            background: linear-gradient(135deg, rgba(26,26,26,0.95) 0%, rgba(45,45,45,0.95) 100%);
             color: white;
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
         }
 
         .header-content {
@@ -105,22 +106,44 @@
         .hero-section {
             text-align: center;
             padding: 4rem 0;
-            background: linear-gradient(135deg, rgba(255,68,68,0.1) 0%, rgba(45,45,45,0.1) 100%);
+            background: linear-gradient(135deg, rgba(255,68,68,0.9) 0%, rgba(45,45,45,0.9) 100%),
+                        url('https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=1200&h=600&fit=crop') center/cover;
             border-radius: 20px;
             margin-bottom: 3rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .hero-section > * {
+            position: relative;
+            z-index: 2;
         }
 
         .hero-title {
             font-size: 3rem;
             margin-bottom: 1rem;
-            color: #2d2d2d;
+            color: white;
             font-weight: 300;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .hero-subtitle {
             font-size: 1.2rem;
-            color: #666;
+            color: rgba(255,255,255,0.9);
             margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
 
         .hero-address {
@@ -128,12 +151,14 @@
             color: #ff4444;
             font-weight: bold;
             margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
 
         .hero-phone {
             font-size: 1.3rem;
-            color: #2d2d2d;
+            color: white;
             font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
 
         .page-content {
@@ -281,6 +306,192 @@
             text-decoration: underline;
         }
 
+        /* 弹窗样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideInUp 0.3s ease;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 1rem;
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            color: #2d2d2d;
+            margin: 0;
+        }
+
+        .close-btn {
+            background: #ff4444;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: #cc3333;
+            transform: scale(1.1);
+        }
+
+        .modal-video {
+            width: 100%;
+            height: 300px;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .welcome-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            text-align: center;
+        }
+
+        .special-offer {
+            background: linear-gradient(135deg, #ff4444 0%, #cc3333 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .offer-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .offer-text {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .offer-code {
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from { 
+                opacity: 0; 
+                transform: translate(-50%, -40%); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translate(-50%, -50%); 
+            }
+        }
+
+        .background-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .floating-element {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.05;
+            animation: float 20s infinite linear;
+        }
+
+        .floating-element:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .floating-element:nth-child(2) { top: 20%; right: 15%; animation-delay: -5s; }
+        .floating-element:nth-child(3) { bottom: 30%; left: 20%; animation-delay: -10s; }
+        .floating-element:nth-child(4) { bottom: 10%; right: 10%; animation-delay: -15s; }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+            100% { transform: translateY(0px) rotate(360deg); }
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(255,68,68,0.1) 0%, rgba(255,68,68,0.05) 100%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .card > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -300,10 +511,56 @@
             .container {
                 padding: 0 1rem;
             }
+
+            .modal-content {
+                width: 95%;
+                padding: 2rem;
+            }
+
+            .modal-title {
+                font-size: 1.5rem;
+            }
+
+            .modal-video {
+                height: 200px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- 背景装饰元素 -->
+    <div class="background-elements">
+        <div class="floating-element">🍣</div>
+        <div class="floating-element">🥢</div>
+        <div class="floating-element">🍱</div>
+        <div class="floating-element">🥟</div>
+    </div>
+
+    <!-- 欢迎弹窗 -->
+    <div id="welcomeModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Velkommen til Kaya Sushi Frederiksberg! 🍣</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <iframe class="modal-video" 
+                    src="https://www.youtube.com/embed/ZzLPUoetSHw?autoplay=1&mute=1&controls=0&start=5&end=35" 
+                    frameborder="0" 
+                    allow="autoplay; encrypted-media" 
+                    allowfullscreen>
+            </iframe>
+            <p class="welcome-text">
+                Velkommen til vores originale restaurant i Frederiksberg! Her har vi perfektioneret 
+                kunsten at lave autentisk japansk sushi siden vores åbning. Oplev tradition møder innovation.
+            </p>
+            <div class="special-offer">
+                <div class="offer-title">🌟 Eksklusive Tilbud</div>
+                <div class="offer-text">Book bord i aften og få gratis miso suppe!</div>
+                <div class="offer-code">Gælder kun i dag</div>
+            </div>
+        </div>
+    </div>
+
     <header class="header">
         <div class="header-content">
             <div class="logo">KAYA SUSHI FREDERIKSBERG</div>
@@ -343,20 +600,24 @@
 
                 <div class="grid">
                     <div class="card">
-                        <h3>🍣 Frisk Sushi</h3>
-                        <p>Håndlavet sushi tilberedt med de friskeste ingredienser. Fra klassiske nigiri til kreative specialty rolls.</p>
+                        <span class="card-icon">🍣</span>
+                        <h3>Traditionel Sushi</h3>
+                        <p>Oplev autentisk japansk sushi-tradition på vores originale lokation. Perfektioneret gennem mange års erfaring med kun de fineste ingredienser.</p>
                     </div>
                     <div class="card">
-                        <h3>🥢 Wok Retter</h3>
-                        <p>Autentiske wok retter inspireret af det traditionelle asiatiske køkken med moderne twist.</p>
+                        <span class="card-icon">🥢</span>
+                        <h3>Signature Wok</h3>
+                        <p>Vores berømte wok-retter som har gjort os til en favorit i Frederiksberg. Unikke smage og kreative kombinationer du ikke finder andre steder.</p>
                     </div>
                     <div class="card">
-                        <h3>🚚 Take Away</h3>
-                        <p>Bestil online og hent din mad - eller få den leveret direkte til døren.</p>
+                        <span class="card-icon">🚚</span>
+                        <h3>Hurtig Levering</h3>
+                        <p>Få leveret direkte til døren eller hent selv. Vores erfarne team sikrer samme høje kvalitet som i restauranten - hver gang.</p>
                     </div>
                     <div class="card">
-                        <h3>🍽️ All You Can Eat</h3>
-                        <p>Nyd så meget sushi du kan spise til en fast pris. Perfekt til store eller små selskaber.</p>
+                        <span class="card-icon">🍽️</span>
+                        <h3>Premium Buffet</h3>
+                        <p>Vores omfattende all-you-can-eat buffet med over 40 retter. Den perfekte mulighed for at prøve hele vores sortiment til en fast pris.</p>
                     </div>
                 </div>
 
@@ -634,15 +895,86 @@
             event.target.classList.add('active');
         }
 
+        // 弹窗功能
+        function showModal() {
+            document.getElementById('welcomeModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('welcomeModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            localStorage.setItem('frederiksberg_welcomeModalShown', 'true');
+        }
+
+        // 点击弹窗外部关闭
+        window.onclick = function(event) {
+            const modal = document.getElementById('welcomeModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
         // Form submission handlers
         document.addEventListener('DOMContentLoaded', function() {
+            // 显示欢迎弹窗（仅首次访问）
+            setTimeout(() => {
+                if (!localStorage.getItem('frederiksberg_welcomeModalShown')) {
+                    showModal();
+                }
+            }, 1500);
+
             const forms = document.querySelectorAll('form');
             forms.forEach(form => {
                 form.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    alert('Tak for din henvendelse! Vi kontakter dig snarest muligt.');
+                    
+                    // 创建成功消息弹窗
+                    const successModal = document.createElement('div');
+                    successModal.className = 'modal';
+                    successModal.style.display = 'block';
+                    successModal.innerHTML = `
+                        <div class="modal-content" style="max-width: 400px; text-align: center;">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">🎉</div>
+                            <h3 style="color: #2d2d2d; margin-bottom: 1rem;">Tusind tak!</h3>
+                            <p style="color: #666; margin-bottom: 2rem;">Din reservation er modtaget. Vi ser frem til at byde dig velkommen!</p>
+                            <button class="btn" onclick="this.parentElement.parentElement.remove(); document.body.style.overflow='auto';">
+                                Fantastisk!
+                            </button>
+                        </div>
+                    `;
+                    document.body.appendChild(successModal);
+                    document.body.style.overflow = 'hidden';
+                    
+                    // Auto-close efter 4 sekunder
+                    setTimeout(() => {
+                        if (successModal.parentElement) {
+                            successModal.remove();
+                            document.body.style.overflow = 'auto';
+                        }
+                    }, 4000);
                 });
             });
+
+            // 添加平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+        // ESC键关闭弹窗
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
         });
     </script>
 </body>
