@@ -2,7 +2,15 @@
 <html lang="da">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Kaya Sushi & Wok - Autentisk japansk cuisine i Danmark. Besøg vores restauranter i Frederiksberg og Søborg for frisk sushi, wok retter og all-you-can-eat buffet.">
+    <meta name="keywords" content="sushi, japansk mad, restaurant, takeaway, all you can eat, Frederiksberg, Søborg, Danmark">
+    <meta name="author" content="Kaya Sushi & Wok">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Kaya Sushi & Wok - Autentisk japansk cuisine">
+    <meta property="og:description" content="Oplev autentisk japansk cuisine hos Kaya Sushi & Wok. To lokationer i Danmark.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#ff4444">
     <title>Kaya Sushi & Wok - Autentisk japansk cuisine</title>
     <style>
         * {
@@ -83,9 +91,34 @@
         }
 
         .restaurant-selector {
-            background: white;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 3rem 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .restaurant-selector::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                url('https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=300&h=200&fit=crop&crop=center&q=30'),
+                url('https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=300&h=200&fit=crop&crop=center&q=30'),
+                url('https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?w=300&h=200&fit=crop&crop=center&q=30');
+            background-size: 200px 150px, 250px 180px, 220px 160px;
+            background-position: 10% 20%, 80% 70%, 50% 90%;
+            background-repeat: no-repeat;
+            opacity: 0.08;
+            z-index: 1;
+        }
+
+        .restaurant-selector > * {
+            position: relative;
+            z-index: 2;
         }
 
         .container {
@@ -132,18 +165,44 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 150px;
+            height: 180px;
             background: linear-gradient(135deg, 
-                url('https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=400&h=150&fit=crop') center/cover,
-                rgba(255, 68, 68, 0.1));
-            opacity: 0.8;
+                rgba(255, 68, 68, 0.15) 0%,
+                rgba(255, 68, 68, 0.05) 100%),
+                url('https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=500&h=300&fit=crop&crop=center') center/cover;
+            border-radius: 12px 12px 0 0;
             z-index: 1;
         }
 
         .restaurant-card:nth-child(2)::before {
             background: linear-gradient(135deg, 
-                url('https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=400&h=150&fit=crop') center/cover,
-                rgba(255, 68, 68, 0.1));
+                rgba(255, 68, 68, 0.15) 0%,
+                rgba(255, 68, 68, 0.05) 100%),
+                url('https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=500&h=300&fit=crop&crop=center') center/cover;
+        }
+
+        .restaurant-card::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 3;
+        }
+
+        .restaurant-card:nth-child(1)::after {
+            content: '🍣';
+        }
+
+        .restaurant-card:nth-child(2)::after {
+            content: '🥢';
         }
 
         .restaurant-card > * {
@@ -162,7 +221,8 @@
             font-weight: bold;
             color: #2d2d2d;
             margin-bottom: 1rem;
-            margin-top: 120px;
+            margin-top: 160px;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
         }
 
         .restaurant-address {
@@ -215,6 +275,30 @@
             color: white;
             padding: 4rem 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                url('https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=200&h=150&fit=crop&q=20'),
+                url('https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=200&h=150&fit=crop&q=20');
+            background-size: 150px 100px, 120px 80px;
+            background-position: 85% 15%, 15% 85%;
+            background-repeat: no-repeat;
+            opacity: 0.05;
+            z-index: 1;
+        }
+
+        .about-section > * {
+            position: relative;
+            z-index: 2;
         }
 
         .about-content {
@@ -359,6 +443,7 @@
         </div>
     </header>
 
+    <main>
     <section class="restaurant-selector">
         <div class="container">
             <h2 class="section-title">Vælg din restaurant</h2>
@@ -432,6 +517,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <footer class="footer">
         <div class="container">

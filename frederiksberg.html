@@ -2,7 +2,15 @@
 <html lang="da">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Kaya Sushi Frederiksberg - Traditionel japansk sushi og wok retter. Nordre Fasanvej 158. Premium buffet og hurtig takeaway service.">
+    <meta name="keywords" content="sushi Frederiksberg, japansk restaurant, traditionel sushi, buffet, takeaway, Nordre Fasanvej">
+    <meta name="author" content="Kaya Sushi Frederiksberg">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Kaya Sushi Frederiksberg - Traditionel japansk cuisine">
+    <meta property="og:description" content="Oplev traditionel japansk cuisine på vores originale lokation i Frederiksberg.">
+    <meta property="og:type" content="restaurant">
+    <meta name="theme-color" content="#ff4444">
     <title>Kaya Sushi Frederiksberg - Autentisk japansk cuisine</title>
     <style>
         * {
@@ -104,12 +112,11 @@
         }
 
         .hero-section {
-            text-align: center;
-            padding: 4rem 0;
+            padding: 5rem 0;
             background: linear-gradient(135deg, rgba(255,68,68,0.9) 0%, rgba(45,45,45,0.9) 100%),
                         url('https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=1200&h=600&fit=crop') center/cover;
             border-radius: 20px;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             color: white;
             position: relative;
             overflow: hidden;
@@ -126,9 +133,35 @@
             z-index: 1;
         }
 
-        .hero-section > * {
+        .hero-content {
             position: relative;
             z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1rem 1.5rem;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .info-icon {
+            font-size: 1.2rem;
         }
 
         .hero-title {
@@ -492,6 +525,142 @@
             display: block;
         }
 
+        /* Feature Cards Styles */
+        .features-section {
+            margin: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover .feature-image img {
+            transform: scale(1.1);
+        }
+
+        .feature-content {
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .feature-icon {
+            position: absolute;
+            top: -20px;
+            right: 1.5rem;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px solid #ff4444;
+        }
+
+        .feature-content h3 {
+            color: #2d2d2d;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .feature-content p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            margin: 4rem 0;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+        }
+
+        .action-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .action-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border: 2px solid transparent;
+        }
+
+        .action-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            border-color: #ff4444;
+        }
+
+        .action-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .action-card h3 {
+            color: #2d2d2d;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .action-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -505,11 +674,45 @@
             }
             
             .hero-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero-info {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+
+            .info-item {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.9rem;
             }
             
             .container {
                 padding: 0 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .feature-image {
+                height: 180px;
+            }
+
+            .action-cards {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .quick-actions {
+                margin: 3rem 0;
+                padding: 2rem 1rem;
             }
 
             .modal-content {
@@ -523,6 +726,15 @@
 
             .modal-video {
                 height: 200px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-section {
+                padding: 3rem 0;
+                margin-bottom: 2rem;
             }
         }
     </style>
@@ -591,45 +803,101 @@
 
             <!-- Forside -->
             <div id="forside" class="page-content active">
-                <div class="hero-section">
-                    <h1 class="hero-title">Velkommen til Kaya Sushi Frederiksberg</h1>
-                    <p class="hero-subtitle">Oplev autentisk japansk cuisine i Frederiksberg</p>
-                    <div class="hero-address">Nordre Fasanvej 158 st.tv, 2000 Frederiksberg</div>
-                    <div class="hero-phone">TLF: 9199 8883</div>
-                </div>
+                <!-- Hero Section -->
+                <section class="hero-section">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Velkommen til Kaya Sushi Frederiksberg</h1>
+                        <p class="hero-subtitle">Oplev autentisk japansk cuisine i hjertet af Frederiksberg</p>
+                        <div class="hero-info">
+                            <div class="info-item">
+                                <span class="info-icon">📍</span>
+                                <span>Nordre Fasanvej 158 st.tv, 2000 Frederiksberg</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon">📞</span>
+                                <span>TLF: 9199 8883</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon">🕐</span>
+                                <span>Man-Fre: 14:00-24:00 | Lør-Søn: 13:00-24:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-                <div class="grid">
-                    <div class="card">
-                        <span class="card-icon">🍣</span>
-                        <h3>Traditionel Sushi</h3>
-                        <p>Oplev autentisk japansk sushi-tradition på vores originale lokation. Perfektioneret gennem mange års erfaring med kun de fineste ingredienser.</p>
+                <!-- Features Section -->
+                <section class="features-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Vores Specialiteter</h2>
+                        <p class="section-subtitle">Oplev traditionens fineste retter på vores originale lokation</p>
                     </div>
-                    <div class="card">
-                        <span class="card-icon">🥢</span>
-                        <h3>Signature Wok</h3>
-                        <p>Vores berømte wok-retter som har gjort os til en favorit i Frederiksberg. Unikke smage og kreative kombinationer du ikke finder andre steder.</p>
+                    <div class="features-grid">
+                        <article class="feature-card">
+                            <div class="feature-image">
+                                <img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=300&h=200&fit=crop" alt="Traditionel Sushi" loading="lazy">
+                            </div>
+                            <div class="feature-content">
+                                <span class="feature-icon">🍣</span>
+                                <h3>Traditionel Sushi</h3>
+                                <p>Autentisk japansk sushi-tradition perfektioneret gennem mange års erfaring. Kun de fineste ingredienser fra Japan.</p>
+                            </div>
+                        </article>
+                        
+                        <article class="feature-card">
+                            <div class="feature-image">
+                                <img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=300&h=200&fit=crop" alt="Signature Wok" loading="lazy">
+                            </div>
+                            <div class="feature-content">
+                                <span class="feature-icon">🥢</span>
+                                <h3>Signature Wok</h3>
+                                <p>Vores berømte wok-retter som har gjort os til en favorit. Unikke smage og kreative kombinationer.</p>
+                            </div>
+                        </article>
+                        
+                        <article class="feature-card">
+                            <div class="feature-image">
+                                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=200&fit=crop" alt="Hurtig Levering" loading="lazy">
+                            </div>
+                            <div class="feature-content">
+                                <span class="feature-icon">🚚</span>
+                                <h3>Hurtig Levering</h3>
+                                <p>Få leveret direkte til døren. Vores erfarne team sikrer samme høje kvalitet som i restauranten.</p>
+                            </div>
+                        </article>
+                        
+                        <article class="feature-card">
+                            <div class="feature-image">
+                                <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=300&h=200&fit=crop" alt="Premium Buffet" loading="lazy">
+                            </div>
+                            <div class="feature-content">
+                                <span class="feature-icon">🍽️</span>
+                                <h3>Premium Buffet</h3>
+                                <p>Omfattende all-you-can-eat buffet med over 40 retter. Den perfekte mulighed for at prøve hele vores sortiment.</p>
+                            </div>
+                        </article>
                     </div>
-                    <div class="card">
-                        <span class="card-icon">🚚</span>
-                        <h3>Hurtig Levering</h3>
-                        <p>Få leveret direkte til døren eller hent selv. Vores erfarne team sikrer samme høje kvalitet som i restauranten - hver gang.</p>
-                    </div>
-                    <div class="card">
-                        <span class="card-icon">🍽️</span>
-                        <h3>Premium Buffet</h3>
-                        <p>Vores omfattende all-you-can-eat buffet med over 40 retter. Den perfekte mulighed for at prøve hele vores sortiment til en fast pris.</p>
-                    </div>
-                </div>
+                </section>
 
-                <div style="text-align: center; margin-top: 3rem;">
-                    <h2 class="section-title">Åbningstider</h2>
-                    <div class="card" style="max-width: 400px; margin: 0 auto;">
-                        <h3>Mandag - Fredag</h3>
-                        <p style="font-size: 1.2rem; font-weight: bold; color: #ff4444;">14:00 - 24:00</p>
-                        <h3 style="margin-top: 1rem;">Lørdag - Søndag</h3>
-                        <p style="font-size: 1.2rem; font-weight: bold; color: #ff4444;">13:00 - 24:00</p>
+                <!-- Quick Actions -->
+                <section class="quick-actions">
+                    <div class="action-cards">
+                        <div class="action-card" onclick="showPage('bookbord')">
+                            <span class="action-icon">📅</span>
+                            <h3>Reserver Bord</h3>
+                            <p>Book dit bord online</p>
+                        </div>
+                        <div class="action-card" onclick="showPage('takeaway')">
+                            <span class="action-icon">📱</span>
+                            <h3>Bestil Takeaway</h3>
+                            <p>Hurtig online bestilling</p>
+                        </div>
+                        <div class="action-card" onclick="showPage('allyoucaneat')">
+                            <span class="action-icon">🍱</span>
+                            <h3>All You Can Eat</h3>
+                            <p>Se vores buffet tilbud</p>
+                        </div>
                     </div>
-                </div>
+                </section>
             </div>
 
             <!-- Take Away -->

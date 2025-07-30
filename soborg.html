@@ -2,7 +2,15 @@
 <html lang="da">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Kaya Sushi Søborg - Frisk sushi, wok retter og all-you-can-eat buffet. Søborg Hovedgade 124A. Book bord eller bestil takeaway online.">
+    <meta name="keywords" content="sushi Søborg, japansk restaurant, takeaway, all you can eat, book bord, Søborg Hovedgade">
+    <meta name="author" content="Kaya Sushi Søborg">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Kaya Sushi Søborg - Autentisk japansk cuisine">
+    <meta property="og:description" content="Besøg Kaya Sushi i Søborg for autentisk japansk cuisine og frisk sushi.">
+    <meta property="og:type" content="restaurant">
+    <meta name="theme-color" content="#ff4444">
     <title>Kaya Sushi Søborg - Autentisk japansk cuisine</title>
     <style>
         * {
@@ -104,12 +112,11 @@
         }
 
         .hero-section {
-            text-align: center;
-            padding: 4rem 0;
+            padding: 5rem 0;
             background: linear-gradient(135deg, rgba(255,68,68,0.9) 0%, rgba(45,45,45,0.9) 100%),
                         url('https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=1200&h=600&fit=crop') center/cover;
             border-radius: 20px;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             color: white;
             position: relative;
             overflow: hidden;
@@ -126,9 +133,35 @@
             z-index: 1;
         }
 
-        .hero-section > * {
+        .hero-content {
             position: relative;
             z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1rem 1.5rem;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .info-icon {
+            font-size: 1.2rem;
         }
 
         .hero-title {
@@ -226,6 +259,142 @@
             font-size: 2.5rem;
             margin-bottom: 1rem;
             display: block;
+        }
+
+        /* New Feature Cards Styles */
+        .features-section {
+            margin: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover .feature-image img {
+            transform: scale(1.1);
+        }
+
+        .feature-content {
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .feature-icon {
+            position: absolute;
+            top: -20px;
+            right: 1.5rem;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px solid #ff4444;
+        }
+
+        .feature-content h3 {
+            color: #2d2d2d;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .feature-content p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            margin: 4rem 0;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+        }
+
+        .action-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .action-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border: 2px solid transparent;
+        }
+
+        .action-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            border-color: #ff4444;
+        }
+
+        .action-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .action-card h3 {
+            color: #2d2d2d;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .action-card p {
+            color: #666;
+            font-size: 0.9rem;
         }
 
         .card h3 {
@@ -492,11 +661,45 @@
             }
             
             .hero-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero-info {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+
+            .info-item {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.9rem;
             }
             
             .container {
                 padding: 0 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .feature-image {
+                height: 180px;
+            }
+
+            .action-cards {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .quick-actions {
+                margin: 3rem 0;
+                padding: 2rem 1rem;
             }
 
             .modal-content {
@@ -510,6 +713,15 @@
 
             .modal-video {
                 height: 200px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-section {
+                padding: 3rem 0;
+                margin-bottom: 2rem;
             }
         }
     </style>
@@ -578,43 +790,101 @@
 
             <!-- Forside -->
             <div id="forside" class="page-content active">
-                <div class="hero-section">
-                    <h1 class="hero-title">Velkommen til Kaya Sushi Søborg</h1>
-                    <p class="hero-subtitle">Oplev autentisk japansk cuisine i hjertet af Søborg</p>
-                    <div class="hero-address">Søborg Hovedgade 124A, 2860 Søborg</div>
-                    <div class="hero-phone">TLF: 5123 1188</div>
-                </div>
+                <!-- Hero Section -->
+                <section class="hero-section">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Velkommen til Kaya Sushi Søborg</h1>
+                        <p class="hero-subtitle">Oplev autentisk japansk cuisine i hjertet af Søborg</p>
+                        <div class="hero-info">
+                            <div class="info-item">
+                                <span class="info-icon">📍</span>
+                                <span>Søborg Hovedgade 124A, 2860 Søborg</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon">📞</span>
+                                <span>TLF: 5123 1188</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon">🕐</span>
+                                <span>Dagligt: 12:00 - 22:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-                <div class="grid">
-                    <div class="card">
-                        <span class="card-icon">🍣</span>
-                        <h3>Frisk Sushi</h3>
-                        <p>Håndlavet sushi tilberedt med de friskeste ingredienser direkte fra Japan. Fra klassiske nigiri til kreative specialty rolls lavet af vores erfarne sushi-kokke.</p>
+                <!-- Features Section -->
+                <section class="features-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Hvad gør os særlige</h2>
+                        <p class="section-subtitle">Opdagér vores unikke tilbud og specialiteter</p>
                     </div>
-                    <div class="card">
-                        <span class="card-icon">🥢</span>
-                        <h3>Wok Retter</h3>
-                        <p>Autentiske wok retter inspireret af det traditionelle asiatiske køkken med moderne danske twist. Friske grøntsager og kvalitetskød tilberedt til perfektion.</p>
+                    <div class="features-grid">
+                        <article class="feature-card">
+                            <div class="feature-image">
+                                <img src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=300&h=200&fit=crop" alt="Frisk Sushi" loading="lazy">
+                            </div>
+                            <div class="feature-content">
+                                <span class="feature-icon">🍣</span>
+                                <h3>Frisk Sushi</h3>
+                                <p>Håndlavet sushi tilberedt med de friskeste ingredienser direkte fra Japan. Fra klassiske nigiri til kreative specialty rolls.</p>
+                            </div>
+                        </article>
+                        
+                        <article class="feature-card">
+                            <div class="feature-image">
+                                <img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=300&h=200&fit=crop" alt="Wok Retter" loading="lazy">
+                            </div>
+                            <div class="feature-content">
+                                <span class="feature-icon">🥢</span>
+                                <h3>Wok Retter</h3>
+                                <p>Autentiske wok retter inspireret af det traditionelle asiatiske køkken med moderne danske twist.</p>
+                            </div>
+                        </article>
+                        
+                        <article class="feature-card">
+                            <div class="feature-image">
+                                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=300&h=200&fit=crop" alt="Take Away" loading="lazy">
+                            </div>
+                            <div class="feature-content">
+                                <span class="feature-icon">🚚</span>
+                                <h3>Take Away</h3>
+                                <p>Bestil online og hent din mad - eller få den leveret direkte til døren. Samme høje kvalitet.</p>
+                            </div>
+                        </article>
+                        
+                        <article class="feature-card">
+                            <div class="feature-image">
+                                <img src="https://images.unsplash.com/photo-1563379091339-03246963d7a9?w=300&h=200&fit=crop" alt="All You Can Eat" loading="lazy">
+                            </div>
+                            <div class="feature-content">
+                                <span class="feature-icon">🍽️</span>
+                                <h3>All You Can Eat</h3>
+                                <p>Over 40 forskellige variationer og 2 timers spisetid. Perfekt til store eller små selskaber.</p>
+                            </div>
+                        </article>
                     </div>
-                    <div class="card">
-                        <span class="card-icon">🚚</span>
-                        <h3>Take Away</h3>
-                        <p>Bestil online og hent din mad - eller få den leveret direkte til døren. Hurtig service og samme høje kvalitet som i restauranten.</p>
-                    </div>
-                    <div class="card">
-                        <span class="card-icon">🍽️</span>
-                        <h3>All You Can Eat</h3>
-                        <p>Nyd så meget sushi du kan spise til en fast pris. Over 40 forskellige variationer og 2 timers spisetid. Perfekt til store eller små selskaber.</p>
-                    </div>
-                </div>
+                </section>
 
-                <div style="text-align: center; margin-top: 3rem;">
-                    <h2 class="section-title">Åbningstider</h2>
-                    <div class="card" style="max-width: 400px; margin: 0 auto;">
-                        <h3>Mandag - Søndag</h3>
-                        <p style="font-size: 1.2rem; font-weight: bold; color: #ff4444;">12:00 - 22:00</p>
+                <!-- Quick Actions -->
+                <section class="quick-actions">
+                    <div class="action-cards">
+                        <div class="action-card" onclick="showPage('bookbord')">
+                            <span class="action-icon">📅</span>
+                            <h3>Book Bord</h3>
+                            <p>Reserver dit bord nu</p>
+                        </div>
+                        <div class="action-card" onclick="showPage('takeaway')">
+                            <span class="action-icon">📱</span>
+                            <h3>Bestil Online</h3>
+                            <p>Hurtig takeaway</p>
+                        </div>
+                        <div class="action-card" onclick="showPage('allyoucaneat')">
+                            <span class="action-icon">🍱</span>
+                            <h3>All You Can Eat</h3>
+                            <p>Se priser og tider</p>
+                        </div>
                     </div>
-                </div>
+                </section>
             </div>
 
             <!-- Take Away -->
