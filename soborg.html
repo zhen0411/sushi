@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Kaya Sushi Søborg - Frisk sushi, wok retter og all-you-can-eat buffet. Søborg Hovedgade 124A. Book bord eller bestil takeaway online.">
+    <meta name="keywords" content="sushi Søborg, japansk restaurant, takeaway, all you can eat, book bord, Søborg Hovedgade">
+    <meta name="author" content="Kaya Sushi Søborg">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Kaya Sushi Søborg - Autentisk japansk cuisine">
+    <meta property="og:description" content="Besøg Kaya Sushi i Søborg for autentisk japansk cuisine og frisk sushi.">
+    <meta property="og:type" content="restaurant">
+    <meta name="theme-color" content="#ff4444">
+    <title>Kaya Sushi Søborg - Autentisk japansk cuisine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .header {
+            background: linear-gradient(135deg, rgba(26,26,26,0.95) 0%, rgba(45,45,45,0.95) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ff4444;
+        }
+
+        .location-info {
+            font-size: 0.9rem;
+            text-align: right;
+        }
+
+        .nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: #ff4444;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 68, 68, 0.3);
+        }
+
+        .content {
+            padding: 3rem 0;
+            min-height: 70vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, rgba(255,68,68,0.9) 0%, rgba(45,45,45,0.9) 100%),
+                        url('https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=1200&h=600&fit=crop') center/cover;
+            border-radius: 20px;
+            margin-bottom: 4rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1rem 1.5rem;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .info-icon {
+            font-size: 1.2rem;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+            font-weight: 300;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .hero-address {
+            font-size: 1.1rem;
+            color: #ff4444;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .hero-phone {
+            font-size: 1.3rem;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .page-content {
+            display: none;
+        }
+
+        .page-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #2d2d2d;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(255,68,68,0.1) 0%, rgba(255,68,68,0.05) 100%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .card > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* New Feature Cards Styles */
+        .features-section {
+            margin: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover .feature-image img {
+            transform: scale(1.1);
+        }
+
+        .feature-content {
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .feature-icon {
+            position: absolute;
+            top: -20px;
+            right: 1.5rem;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px solid #ff4444;
+        }
+
+        .feature-content h3 {
+            color: #2d2d2d;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .feature-content p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            margin: 4rem 0;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+        }
+
+        .action-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .action-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border: 2px solid transparent;
+        }
+
+        .action-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            border-color: #ff4444;
+        }
+
+        .action-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .action-card h3 {
+            color: #2d2d2d;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .action-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .card h3 {
+            color: #ff4444;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2d2d2d;
+            margin: 1rem 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff4444;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #ff4444 0%, #cc3333 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #cc3333 0%, #aa2222 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,68,68,0.3);
+        }
+
+        .contact-info {
+            background: #2d2d2d;
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info h3 {
+            color: #ff4444;
+            margin-bottom: 1rem;
+        }
+
+        .map-container {
+            height: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .back-to-main {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .back-to-main a {
+            color: #ff4444;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-to-main a:hover {
+            text-decoration: underline;
+        }
+
+        /* 弹窗样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideInUp 0.3s ease;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 1rem;
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            color: #2d2d2d;
+            margin: 0;
+        }
+
+        .close-btn {
+            background: #ff4444;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: #cc3333;
+            transform: scale(1.1);
+        }
+
+        .modal-video {
+            width: 100%;
+            height: 300px;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .welcome-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            text-align: center;
+        }
+
+        .special-offer {
+            background: linear-gradient(135deg, #ff4444 0%, #cc3333 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .offer-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .offer-text {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .offer-code {
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from { 
+                opacity: 0; 
+                transform: translate(-50%, -40%); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translate(-50%, -50%); 
+            }
+        }
+
+        .background-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .floating-element {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.05;
+            animation: float 20s infinite linear;
+        }
+
+        .floating-element:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .floating-element:nth-child(2) { top: 20%; right: 15%; animation-delay: -5s; }
+        .floating-element:nth-child(3) { bottom: 30%; left: 20%; animation-delay: -10s; }
+        .floating-element:nth-child(4) { bottom: 10%; right: 10%; animation-delay: -15s; }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+            100% { transform: translateY(0px) rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero-info {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+
+            .info-item {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .feature-image {
+                height: 180px;
+            }
+
+            .action-cards {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .quick-actions {
+                margin: 3rem 0;
+                padding: 2rem 1rem;
+            }
+
+            .modal-content {
+                width: 95%;
+                padding: 2rem;
+            }
+
+            .modal-title {
+                font-size: 1.5rem;
+            }
+
+            .modal-video {
+                height: 200px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-section {
+                padding: 3rem 0;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 背景装饰元素 -->
+    <div class="background-elements">
+        <div class="floating-element">🍣</div>
+        <div class="floating-element">🥢</div>
+        <div class="floating-element">🍱</div>
+        <div class="floating-element">🥟</div>
+    </div>
+
+    <!-- 欢迎弹窗 -->
+    <div id="welcomeModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Velkommen til Kaya Sushi Søborg! 🍣</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <iframe class="modal-video" 
+                    src="https://www.youtube.com/embed/skgsn2PKZ1w?autoplay=1&mute=1&controls=0&start=10&end=40" 
+                    frameborder="0" 
+                    allow="autoplay; encrypted-media" 
+                    allowfullscreen>
+            </iframe>
+            <p class="welcome-text">
+                Velkommen til vores nye filial i Søborg! Vi serverer autentisk japansk cuisine lavet med 
+                kærlighed og de friskeste ingredienser. Oplev den perfekte kombination af tradition og innovation.
+            </p>
+            <div class="special-offer">
+                <div class="offer-title">🎉 Åbnings Tilbud</div>
+                <div class="offer-text">Få 15% rabat på din første bestilling!</div>
+                <div class="offer-code">Kode: WELCOME15</div>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">KAYA SUSHI SØBORG</div>
+            <div class="location-info">
+                <div>Søborg Hovedgade 124A, 2860 Søborg</div>
+                <div>TLF: 5123 1188</div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="nav-content">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link active" onclick="showPage('forside')">Forside</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('takeaway')">Take Away</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('allyoucaneat')">All You Can Eat</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('bookbord')">Book Bord</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('kontakt')">Kontakt Os</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="container">
+            <div class="back-to-main">
+                <a href="index.html">← Tilbage til hovedside</a>
+            </div>
+
+            <!-- Forside -->
+            <div id="forside" class="page-content active">
+                <!-- Hero Section -->
+                <section class="hero-section">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Velkommen til Kaya Sushi Søborg</h1>
+                        <p class="hero-subtitle">Oplev autentisk japansk cuisine i hjertet af Søborg</p>
+                        <div class="hero-info">
+                            <div class="info-item">
+                                <span class="info-icon">📍</span>
+                                <span>Søborg Hovedgade 124A, 2860 Søborg</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon">📞</span>
+                                <span>TLF: 5123 1188</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon">🕐</span>
+                                <span>Dagligt: 12:00 - 22:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Features Section -->
+                <section class="features-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Hvad gør os særlige</h2>
+                        <p class="section-subtitle">Opdagér vores unikke tilbud og specialiteter</p>
+                    </div>
+                    <div class="features-grid">
+                        <article class="feature-card">
+                            <div class="feature-image">
+                                <img src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=300&h=200&fit=crop" alt="Frisk Sushi" loading="lazy">
+                            </div>
+                            <div class="feature-content">
+                                <span class="feature-icon">🍣</span>
+                                <h3>Frisk Sushi</h3>
+                                <p>Håndlavet sushi tilberedt med de friskeste ingredienser direkte fra Japan. Fra klassiske nigiri til kreative specialty rolls.</p>
+                            </div>
+                        </article>
+                        
+                        <article class="feature-card">
+                            <div class="feature-image">
+                                <img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=300&h=200&fit=crop" alt="Wok Retter" loading="lazy">
+                            </div>
+                            <div class="feature-content">
+                                <span class="feature-icon">🥢</span>
+                                <h3>Wok Retter</h3>
+                                <p>Autentiske wok retter inspireret af det traditionelle asiatiske køkken med moderne danske twist.</p>
+                            </div>
+                        </article>
+                        
+                        <article class="feature-card">
+                            <div class="feature-image">
+                                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=300&h=200&fit=crop" alt="Take Away" loading="lazy">
+                            </div>
+                            <div class="feature-content">
+                                <span class="feature-icon">🚚</span>
+                                <h3>Take Away</h3>
+                                <p>Bestil online og hent din mad - eller få den leveret direkte til døren. Samme høje kvalitet.</p>
+                            </div>
+                        </article>
+                        
+                        <article class="feature-card">
+                            <div class="feature-image">
+                                <img src="https://images.unsplash.com/photo-1563379091339-03246963d7a9?w=300&h=200&fit=crop" alt="All You Can Eat" loading="lazy">
+                            </div>
+                            <div class="feature-content">
+                                <span class="feature-icon">🍽️</span>
+                                <h3>All You Can Eat</h3>
+                                <p>Over 40 forskellige variationer og 2 timers spisetid. Perfekt til store eller små selskaber.</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Quick Actions -->
+                <section class="quick-actions">
+                    <div class="action-cards">
+                        <div class="action-card" onclick="showPage('bookbord')">
+                            <span class="action-icon">📅</span>
+                            <h3>Book Bord</h3>
+                            <p>Reserver dit bord nu</p>
+                        </div>
+                        <div class="action-card" onclick="showPage('takeaway')">
+                            <span class="action-icon">📱</span>
+                            <h3>Bestil Online</h3>
+                            <p>Hurtig takeaway</p>
+                        </div>
+                        <div class="action-card" onclick="showPage('allyoucaneat')">
+                            <span class="action-icon">🍱</span>
+                            <h3>All You Can Eat</h3>
+                            <p>Se priser og tider</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Take Away -->
+            <div id="takeaway" class="page-content">
+                <h2 class="section-title">Take Away</h2>
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <p style="font-size: 1.2rem; color: #666; margin-bottom: 2rem;">
+                        Bestil din favorit sushi online og få den leveret eller hent selv i restauranten.
+                    </p>
+                    <a href="https://www.just-eat.dk" target="_blank" class="btn" style="display: inline-block; text-decoration: none; margin-right: 1rem;">
+                        Bestil på Just Eat
+                    </a>
+                    <a href="https://www.foodora.dk" target="_blank" class="btn" style="display: inline-block; text-decoration: none;">
+                        Bestil på Foodora
+                    </a>
+                </div>
+                
+                <div class="grid">
+                    <div class="card">
+                        <h3>Populære Sushi Menuer</h3>
+                        <p><strong>Kaya Special Menu</strong></p>
+                        <div class="price">DKK 189,-</div>
+                        <p>12 stk. maki + 6 stk. nigiri + 2 stk. inside-out</p>
+                    </div>
+                    <div class="card">
+                        <h3>Familie Menu</h3>
+                        <p><strong>Perfect til deling</strong></p>
+                        <div class="price">DKK 349,-</div>
+                        <p>24 stk. maki + 12 stk. nigiri + 4 stk. inside-out + edamame</p>
+                    </div>
+                    <div class="card">
+                        <h3>Vegetar Menu</h3>
+                        <p><strong>Helt uden kød og fisk</strong></p>
+                        <div class="price">DKK 159,-</div>
+                        <p>Avocado maki, agurk maki, vegetar inside-out + grøntsags tempura</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All You Can Eat -->
+            <div id="allyoucaneat" class="page-content">
+                <h2 class="section-title">All You Can Eat</h2>
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <p style="font-size: 1.2rem; color: #666;">
+                        Spis så meget sushi du kan til en fast pris. Minimum 2 timer spisetid.
+                    </p>
+                </div>
+                
+                <div class="grid">
+                    <div class="card">
+                        <h3>Voksne (12+ år)</h3>
+                        <div class="price">
+                            <div>Mandag-Torsdag: DKK 228,-</div>
+                            <div>Fredag-Søndag: DKK 248,-</div>
+                        </div>
+                        <p>Adgang til hele vores sushi buffet med over 40 forskellige variationer</p>
+                    </div>
+                    <div class="card">
+                        <h3>Børn (2-11 år)</h3>
+                        <div class="price">
+                            <div>Mandag-Torsdag: DKK 114,-</div>
+                            <div>Fredag-Søndag: DKK 124,-</div>
+                        </div>
+                        <p>Halv pris for børn mellem 2-11 år</p>
+                    </div>
+                    <div class="card">
+                        <h3>Småbørn (0-2 år)</h3>
+                        <div class="price">Gratis</div>
+                        <p>Børn under 2 år spiser gratis</p>
+                    </div>
+                </div>
+
+                <div style="background: #f8f9fa; padding: 2rem; border-radius: 12px; margin-top: 2rem;">
+                    <h3 style="text-align: center; margin-bottom: 1rem;">Buffet Indeholder</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <div>• Alle klassiske maki</div>
+                        <div>• Nigiri sushi</div>
+                        <div>• Inside-out rolls</div>
+                        <div>• Sashimi</div>
+                        <div>• Tempura</div>
+                        <div>• Salater</div>
+                        <div>• Diverse forretter</div>
+                        <div>• Frugt og dessert</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Book Bord -->
+            <div id="bookbord" class="page-content">
+                <h2 class="section-title">Book Bord</h2>
+                <div style="max-width: 600px; margin: 0 auto;">
+                    <div class="card">
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Navn *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Telefon *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email">
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <label for="date">Dato *</label>
+                                    <input type="date" id="date" name="date" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="time">Tidspunkt *</label>
+                                    <select id="time" name="time" required>
+                                        <option value="">Vælg tidspunkt</option>
+                                        <option value="12:00">12:00</option>
+                                        <option value="12:30">12:30</option>
+                                        <option value="13:00">13:00</option>
+                                        <option value="13:30">13:30</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="14:30">14:30</option>
+                                        <option value="15:00">15:00</option>
+                                        <option value="15:30">15:30</option>
+                                        <option value="16:00">16:00</option>
+                                        <option value="16:30">16:30</option>
+                                        <option value="17:00">17:00</option>
+                                        <option value="17:30">17:30</option>
+                                        <option value="18:00">18:00</option>
+                                        <option value="18:30">18:30</option>
+                                        <option value="19:00">19:00</option>
+                                        <option value="19:30">19:30</option>
+                                        <option value="20:00">20:00</option>
+                                        <option value="20:30">20:30</option>
+                                        <option value="21:00">21:00</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="guests">Antal personer *</label>
+                                <select id="guests" name="guests" required>
+                                    <option value="">Vælg antal</option>
+                                    <option value="1">1 person</option>
+                                    <option value="2">2 personer</option>
+                                    <option value="3">3 personer</option>
+                                    <option value="4">4 personer</option>
+                                    <option value="5">5 personer</option>
+                                    <option value="6">6 personer</option>
+                                    <option value="7">7 personer</option>
+                                    <option value="8">8 personer</option>
+                                    <option value="9+">9+ personer</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Besked</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Specielle ønsker, allergier, etc."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn" style="width: 100%;">Send Reservation</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kontakt Os -->
+            <div id="kontakt" class="page-content">
+                <h2 class="section-title">Kontakt Os</h2>
+                
+                <div class="contact-info">
+                    <h3>🏠 Kaya Sushi Søborg</h3>
+                    <p><strong>Adresse:</strong> Søborg Hovedgade 124A, 2860 Søborg</p>
+                    <p><strong>Telefon:</strong> 5123 1188</p>
+                    <p><strong>Email:</strong> soborg@kayasushi.dk</p>
+                    <br>
+                    <h4>Åbningstider:</h4>
+                    <p>Mandag - Søndag: 12:00 - 22:00</p>
+                </div>
+
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2237.8!2d12.5!3d55.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSøborg%20Hovedgade%20124A%2C%202860%20Søborg!5e0!3m2!1sda!2sdk!4v1234567890"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <h3 style="text-align: center; margin-bottom: 2rem;">Send os en besked</h3>
+                    <div style="max-width: 600px; margin: 0 auto;">
+                        <div class="card">
+                            <form>
+                                <div class="form-group">
+                                    <label for="contact-name">Navn *</label>
+                                    <input type="text" id="contact-name" name="name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-email">Email *</label>
+                                    <input type="email" id="contact-email" name="email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-phone">Telefon</label>
+                                    <input type="tel" id="contact-phone" name="phone">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-subject">Emne</label>
+                                    <select id="contact-subject" name="subject">
+                                        <option value="general">Generel henvendelse</option>
+                                        <option value="reservation">Bordreservation</option>
+                                        <option value="takeaway">Take away</option>
+                                        <option value="catering">Catering</option>
+                                        <option value="complaint">Klage</option>
+                                        <option value="compliment">Ros</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-message">Besked *</label>
+                                    <textarea id="contact-message" name="message" rows="5" required></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn" style="width: 100%;">Send Besked</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Kaya Sushi Søborg. Alle rettigheder forbeholdes.</p>
+            <p>Søborg Hovedgade 124A, 2860 Søborg | TLF: 5123 1188</p>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Remove active class from all nav links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Add active class to clicked nav link
+            event.target.classList.add('active');
+        }
+
+        // 弹窗功能
+        function showModal() {
+            document.getElementById('welcomeModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('welcomeModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            localStorage.setItem('welcomeModalShown', 'true');
+        }
+
+        // 点击弹窗外部关闭
+        window.onclick = function(event) {
+            const modal = document.getElementById('welcomeModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Form submission handlers
+        document.addEventListener('DOMContentLoaded', function() {
+            // 显示欢迎弹窗（仅首次访问）
+            setTimeout(() => {
+                if (!localStorage.getItem('welcomeModalShown')) {
+                    showModal();
+                }
+            }, 1000);
+
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // 创建成功消息弹窗
+                    const successModal = document.createElement('div');
+                    successModal.className = 'modal';
+                    successModal.style.display = 'block';
+                    successModal.innerHTML = `
+                        <div class="modal-content" style="max-width: 400px; text-align: center;">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">✅</div>
+                            <h3 style="color: #2d2d2d; margin-bottom: 1rem;">Tak for din henvendelse!</h3>
+                            <p style="color: #666; margin-bottom: 2rem;">Vi kontakter dig snarest muligt.</p>
+                            <button class="btn" onclick="this.parentElement.parentElement.remove(); document.body.style.overflow='auto';">
+                                Luk
+                            </button>
+                        </div>
+                    `;
+                    document.body.appendChild(successModal);
+                    document.body.style.overflow = 'hidden';
+                    
+                    // Auto-close efter 3 sekunder
+                    setTimeout(() => {
+                        if (successModal.parentElement) {
+                            successModal.remove();
+                            document.body.style.overflow = 'auto';
+                        }
+                    }, 3000);
+                });
+            });
+
+            // 添加平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+        // ESC键关闭弹窗
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
